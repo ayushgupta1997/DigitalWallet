@@ -1,14 +1,15 @@
 const User = require('../models/user');
 
-User = require('../user');
-
 class CreateWallet {
     constructor () {
-        this.walletUsers = new Map(); // total wallets
+        this.walletUsers = [];
     }
-    async createWallet(name) {
-        let user = new User(name);
+    static createWallet(name, amount) {
+        let user = new User(name, amount);
         this.walletUsers.push(user);
+    }
+    async getWalletUsers() {
+        return this.walletUsers;
     }
 
 }

@@ -1,7 +1,7 @@
 class User {
-    constructor (name) {
+    constructor (name, amount) {
         this.name = name;
-        this.walletBalance = 0;
+        this.walletBalance = amount;
         this.debitCount = 0;
         this.creditCount = 0;
         this.statement = [];
@@ -18,8 +18,20 @@ class User {
         }
     }
 
-    async getWalletAmount() {
+    async addStatement(name, type) {
+        this.statement.push(`${name} ${type}`);
+    }
+
+    async getStatement(name) {
+        return this.statement;
+    }
+
+    static getWalletAmount() {
         return this.walletBalance;
+    }
+
+    async noOfTransactions(name) {
+        return this.debitCount + this.creditCount;
     }
 }
 
