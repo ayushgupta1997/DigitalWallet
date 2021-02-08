@@ -1,0 +1,11 @@
+{
+  "name": "digitalwallet",
+  "version": "1.0.0",
+  "description": "a digital wallet",
+  "main": "driver.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
