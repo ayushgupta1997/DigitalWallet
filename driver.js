@@ -1,16 +1,21 @@
 const CreateWalletService = require('./services/createWallet');
-const TransferMoneyService = require('./services/overview');
-const Statement = require('./services/statement');
-const OverView = require('./services/transferMoney');
+// const TransferMoneyService = require('./services/overview');
+// const Statement = require('./services/statement');
+ const OverView = require('./services/overview');
+
+
 
 async function main() {
-    CreateWalletService.createWallet('Harry', 100)
-    CreateWalletService.createWallet('Ron', 95.7)
-    CreateWalletService.createWallet('Hermione', 104)
-    CreateWalletService.createWallet('Albus', 200)
-    CreateWalletService.createWallet('Draco', 500)
+    let walletService = new CreateWalletService();
+    let overViewService = new OverView();
+    
+    walletService.createWallet('Harry', 100)
+    walletService.createWallet('Ron', 95.7)
+    walletService.createWallet('Hermione', 104)
+    walletService.createWallet('Albus', 200)
+    walletService.createWallet('Draco', 500)
 
-    Overview.getOverview();
+    walletService.getOverview();
 
     // TransferMoneyService.trasfer('Albus', 'Draco', 30);
     // TransferMoneyService.trasfer('Hermione', 'Harry', 2);
